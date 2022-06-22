@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background: #dfdfdf;
+}
+header nav {
+
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+header nav ul li {
+    list-style-type: none;
+}
+header nav ul li a {
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: #242424;
+}
+header nav ul li a:hover {
+    background: #d7d7d7;
+    text-decoration: none;
+}
+
+section.login-section {
+    margin-top: 50px;
+}
+h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+form .input-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+form .input-group label {
+
+}
+form .input-group input {
+    width: 50%;
+    border: 1px solid #242424;
+    border-radius: 3px;
+    padding-left: 7px;
+    outline: unset;
+}
+form .input-group input[type='file'] {
+    border: 0;
+}
+form button {
+    width: 100%;
+    height: 25px;
+    border: 0;
+    background: #242424;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.user-info-block {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.user-info-block .uinfo-block {
+
+}
+.user-info-block .uinfo-block .uinfo-line {
+
+}
+.user-info-block .uinfo-block .uinfo-line .uimage-block {
+    width: 150px;
+}
+.user-info-block .uinfo-block .uinfo-line .uimage-block img {
+    width: 100%;
+}
+
+.all_users {
+    margin: 30px 5px;
+}
+.users_load_block {
+    display: flex;
+    flex-direction: column;
+}
+.users_load_block .user_block {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #242424;
+    padding: 10px 0;
+}
+.users_load_block .user_block .user_photo {
+    width: 70px;
+}
+.users_load_block .user_block .user_photo img {
+    width: 100%;
+}
+.users_load_block .user_block .user_info {
+
+}
+.users_load_block .user_block .user_info ul {
+    padding-left: 20px;
+    margin: 0;
+}
+.users_load_block .user_block .user_info ul li {
+    list-style-type: none;
+}

@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+
+Route::prefix('account')->middleware(['auth'])->group(function () {
+    Route::get('/', 'App\Http\Controllers\AccountController@index')->name('account');
+    Route::post('/edit', 'App\Http\Controllers\AccountController@edit')->name('account.edit');
 });
+
+require __DIR__.'/auth.php';
