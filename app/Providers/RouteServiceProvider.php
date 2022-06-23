@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/account';
+    protected $apiNamespace ='App\Http\Controllers\Api';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -28,10 +29,17 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+
+
+
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+            Route::group([
+                'middleware' => ['api', 'api_version:v1'],
+                'namespace'  => "{$this->apiNamespace}\V1",
+                'prefix'     => 'api/v1',
+            ], function ($router) {
+                require base_path('routes/api_v1.php');
+            });
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));

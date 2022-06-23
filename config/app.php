@@ -126,6 +126,16 @@ return [
     'cipher' => 'AES-256-CBC',
 
     /*
+    |-------------------------------------------
+    | Current API Version
+    |-------------------------------------------
+    | That is the default API version of your API (Last version).
+    | The idea is that if there is no version when calling the API, it  | will be used this one.
+    */
+
+    'api_latest'  => '2',
+
+    /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
     |--------------------------------------------------------------------------
@@ -142,6 +152,7 @@ return [
         'driver' => 'file',
         // 'store'  => 'redis',
     ],
+
 
     /*
     |--------------------------------------------------------------------------

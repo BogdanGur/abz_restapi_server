@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResources([
+    'token' => \App\Http\Controllers\Api\V1\TokenController::class,
+    'users' => \App\Http\Controllers\Api\V1\UserController::class,
+    'positions' => \App\Http\Controllers\Api\V1\PositionController::class
+]);
+
+Route::fallback(function () {
+    return response()->json([
+        'success' => false,
+        'message' => 'Page not found'
+    ], 404);
+});

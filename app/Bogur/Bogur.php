@@ -1,7 +1,9 @@
 <?php
 namespace App\Bogur;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Tinify\AccountException;
 use Tinify\ClientException;
 use Tinify\ConnectionException;
@@ -33,5 +35,12 @@ class Bogur {
             print("The error message is: " . $e->getMessage());
         }
 
+    }
+
+    public static function createToken() {
+        $token = base64_encode(Str::random(30)."}");
+        Cache::put('token', $token, now()->addMinutes(40));
+
+        return $token;
     }
 }
