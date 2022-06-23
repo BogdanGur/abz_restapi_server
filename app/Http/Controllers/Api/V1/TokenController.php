@@ -19,8 +19,8 @@ class TokenController extends Controller
     public function index()
     {
         $token = Bogur::createToken();
-        Cache::put('token', $token, now()->addMinutes(40));
-        return Cookie::get('XSRF-TOKEN');
+        Cache::put('token', $token, now()->ad)
+//        return Cookie::get('XSRF-TOKEN');
 
         return response()->json([
             'success' => true,

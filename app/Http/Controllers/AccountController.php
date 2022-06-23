@@ -14,12 +14,6 @@ class AccountController extends Controller
 {
     public function index(Request $request) {
 
-        $request->session()->regenerateToken();
-        $token = csrf_token();
-        $xsrf = base64_encode(Cookie::get('XSRF-TOKEN'));
-
-        return ['token' => $token, 'XSRF' => $xsrf];
-
         return view('account', ["user" => User::findOrFail(Auth::id()), "positions" => Position::all()]);
     }
 

@@ -122,3 +122,46 @@ form button {
 .users_load_block .user_block .user_info ul li {
     list-style-type: none;
 }
+
+.all_users {
+    margin: 30px 5px;
+}
+.users_load_block {
+    display: flex;
+    flex-direction: column;
+}
+.users_load_block .user_block {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #242424;
+    padding: 10px 0;
+}
+.users_load_block .user_block .user_photo {
+    width: 70px;
+}
+.users_load_block .user_block .user_photo img {
+    width: 100%;
+}
+.users_load_block .user_block .user_info {
+
+}
+.users_load_block .user_block .user_info ul {
+    padding-left: 20px;
+    margin: 0;
+}
+.users_load_block .user_block .user_info ul li {
+    list-style-type: none;
+}
+.all_users .load_more-btn {
+    border: 0;
+    margin-top: 20px;
+    padding: 7px;
+    outline: none;
+    background: #242424;
+    color: #ffffff;
+    width: 100%;
+}
+.all_users .load_more-btn.disabled {
+    background: #cccccc;
+    cursor: no-drop;
+}
