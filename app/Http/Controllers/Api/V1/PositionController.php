@@ -18,6 +18,13 @@ class PositionController extends Controller
         try {
             $positions = Position::all();
 
+            if(count($positions) > 1) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Positions not found'
+                ], 422);
+            }
+
             return response()->json([
                 'success' => true,
                 'positions' => $positions
