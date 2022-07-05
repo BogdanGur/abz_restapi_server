@@ -60,7 +60,7 @@
                             <label for="position_id">Position</label>
                             <select name="position_id" id="position_id">
                                 @foreach($positions as $position)
-                                    <option value="{{ $position->id }}">{{ $position->name }}</option>
+                                    <option value="{{ $position->id }}" @if($position->id == $user->position_id) selected @endif>{{ $position->name }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('phone'))
