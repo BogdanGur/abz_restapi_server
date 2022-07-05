@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -31,6 +32,9 @@ class AccountController extends Controller
 
             $user->photo = $request->photo->hashName();
         }
+
+        if($request->password) $user->password = Hash::make($request->password);
+
         $user->save();
 
         return back()->with(['success' => 'Данные обновлены успешно']);

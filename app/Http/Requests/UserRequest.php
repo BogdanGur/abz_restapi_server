@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
 
 class UserRequest extends FormRequest
 {
@@ -28,7 +29,9 @@ class UserRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|regex:/^\+380\d{3}\d{2}\d{2}\d{2}$/',
             'position_id' => 'integer',
-            'photo' => 'mimes:jpeg,jpg|max:5048|dimensions:min_width=70,min_height=70'
+            'photo' => 'mimes:jpeg,jpg|max:5048|dimensions:min_width=70,min_height=70',
+            'password' => 'confirmed',
+            'password_confirmation' => 'same:password'
         ];
     }
 
@@ -44,6 +47,8 @@ class UserRequest extends FormRequest
             'phone.regex' => 'Не похоже на Телефон',
             'photo.mimes' => 'Фотография должна быть формата jpg/jpeg',
             'photo.max' => 'Максимальный размер фотографии 5MB',
+            'photo.dimensions' => 'Минимальные размеры фото 70х70 px',
+            'password.confirmed' => 'Подтвердите пароль',
         ];
     }
 }

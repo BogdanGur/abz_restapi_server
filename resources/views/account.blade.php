@@ -74,6 +74,20 @@
                                 <div class="alert alert-danger">{{ $errors->first('photo') }}</div>
                             @endif
                         </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="input-group">
+                            <label for="password_confirmation">Confirm Password</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation">
+                        </div>
+                        @if($errors->has('password'))
+                            <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                        @endif
+                        @if($errors->has('conf_password'))
+                            <div class="alert alert-danger">{{ $errors->first('conf_password') }}</div>
+                        @endif
                         <button type="submit">Send</button>
                     </form>
                 </div>
