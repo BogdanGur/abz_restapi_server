@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|regex:/^\+380\d{3}\d{2}\d{2}\d{2}$/',
             'position_id' => 'integer',
-            'photo' => 'mimes:jpeg,jpg|max:5048'
+            'photo' => 'mimes:jpeg,jpg|max:5048|dimensions:min_width=70,min_height=70'
         ];
     }
 
